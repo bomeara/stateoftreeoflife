@@ -1,7 +1,7 @@
 library(NSFgrantparser)
 library(taxize)
 
-load("~/Desktop/NSF1980To2017Phylo.rda")
+load("NSF1980To2017Phylo.rda")
 
 RunAnalysis <- function(focal.clade, data) {
 
@@ -21,7 +21,6 @@ RunAnalysis <- function(focal.clade, data) {
 clades <- c("Hemiptera", "Odonata", "Blattodea", "Chelicerata", "Myriapoda", "Ascomycota", "Plantae", "Mammalia", "Coleoptera", "Basidiomycota", "Archaea", "Platyhelminthes", "Porifera", "Aves", "Nematoda", "Protozoa", "Tracheophyta", "Chromista", "Actinobacteria", "Lepidoptera", "Mollusca", "Annelida")
 
 
-setwd("~/Desktop")
 
 for(i in sequence(length(clades))) {
 	try(RunAnalysis(clades[i], data))
