@@ -1,0 +1,309 @@
+
+R version 3.3.3 (2017-03-06) -- "Another Canoe"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin16.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(rphylotastic)
+> data <- read.csv("clades.txt", header=FALSE, stringsAsFactors = FALSE)
+> data <- data[,1]
+> data <- data[which(nchar(data)>0)]
+> fractions <- rep(NA, length(data))
+> number.total <- rep(NA, length(data))
+> number.dark <- rep(NA, length(data))
+> number.known <- rep(NA, length(data))
+> result.names <- rep(NA, length(data))
+> for (i in sequence(length(data))) {
++   taxon <- strsplit(gsub(':', " ", data[i])," ")[[1]]
++   taxon <- taxon[length(taxon)]
++   result.names[i] <- taxon
++   local.results <- NULL
++   try(local.results <- SeparateDarkTaxaGenbank(taxon))
++   if(!is.null(local.results)) {
++      fractions[i] <- local.results$fraction.dark
++      number.total[i] <- length(local.results$dark) + length(local.results$known)
++      number.dark[i] <- length(local.results$dark)
++      number.known[i] <- length(local.results$known)
++   }
++   print(paste(result.names[i], fractions[i]))
++   all.results <- data.frame(taxon=result.names[!is.na(fractions)], fraction.dark=fractions[!is.na(fractions)], number.total=number.total[!is.na(fractions)], number.dark=number.dark[!is.na(fractions)], number.known=number.known[!is.na(fractions)], stringsAsFactors=FALSE)
++   write.csv(all.results, "GenbankInfo.csv")
++ }
+[1] "Apicomplexa 0.900469759248385"
+[1] "Ciliophora 0.523901310717039"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Dinozoa NA"
+[1] "Alveolata 0.8353"
+[1] "Arcellinida 0.130952380952381"
+[1] "Dictyostelia 0.352601156069364"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Eumycetozoa NA"
+[1] "Myxogastria 0.240825688073394"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Ameobozoa NA"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Protostelia NA"
+[1] "Glaucophyta 0.263157894736842"
+[1] "Rhodophyceae 0.56980056980057"
+[1] "Euglenozoa 0.674834437086093"
+[1] "Fornicata 0.758064516129032"
+[1] "Heterolobosea 0.78705636743215"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "sedis NA"
+[1] "Jakobida 0.153846153846154"
+[1] "Parabasalia 0.608888888888889"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Preaxostyla NA"
+[1] "Choanomonada 0.222222222222222"
+[1] "Mesomycetozoa 0.767441860465116"
+[1] "Apusomonadida 0.541666666666667"
+[1] "Centroheliozoa 0.596491228070175"
+[1] "Cryptophyceae 0.725752508361204"
+[1] "Haptophyta 0.732283464566929"
+[1] "Acantharia 0.438356164383562"
+[1] "Cercozoa 0.665813060179257"
+[1] "Foraminifera 0.746104491292392"
+[1] "Haplosporidia 0.528301886792453"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Nucleohelea NA"
+[1] "Polycystinea 0.284313725490196"
+[1] "Actinophryidae 0"
+[1] "Bacillariophyta 0.570793180133432"
+[1] "Bicosoecida 0.792207792207792"
+[1] "Chrysophyceae 0.609375"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Dictyophyceae NA"
+[1] "Eustigmatophyceae 0.849462365591398"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Hyphochytriales NA"
+[1] "Labyrinthulomycetes 0.874203821656051"
+[1] "Opalinata 0.636363636363636"
+[1] "Pelagophyceae 0.794520547945205"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Peronospororriycetes NA"
+[1] "Phaeophyceae 0.491792929292929"
+[1] "Phaeothamniophyceae 0.333333333333333"
+[1] "Pinguiophyceae 0.615384615384615"
+[1] "Raphidophyceae 0.44"
+[1] "Synurophyceae 0.365853658536585"
+[1] "Xanthophyceae 0.526041666666667"
+[1] "Porifera 0.571532846715328"
+[1] "Anthozoa 0.568171242438343"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Medusozoa NA"
+[1] "Myxozoa 0.316647264260768"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Chlorophytes NA"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Streptophytes NA"
+[1] "Bryophytes 0.101780779858766"
+[1] "Lycopodiopsida 0.0833333333333333"
+[1] "Polypodiopsida 0.0802158942862461"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Gymnosperms NA"
+[1] "Amborellales 0"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Nympheales NA"
+[1] "Austrobaileyales 0.09375"
+[1] "Monocots 0.1723"
+[1] "Collembola 0.862664714494876"
+[1] "Protura 0.254901960784314"
+[1] "Diplura 0.561643835616438"
+[1] "Archaeognatha 0.524193548387097"
+[1] "Thysanura 0.55421686746988"
+[1] "Odonata 0.295002031694433"
+[1] "Ephemeroptera 0.74187725631769"
+[1] "Zoraptera 0.333333333333333"
+[1] "Dermaptera 0.482758620689655"
+[1] "Plecoptera 0.570332480818414"
+[1] "Orthoptera 0.469910672308416"
+[1] "Mantophasmatodea 0.4"
+[1] "Grylloblattodea 0.682539682539683"
+[1] "Embioptera 0.403846153846154"
+[1] "Phasmatodea 0.335078534031414"
+[1] "Mantodea 0.43485342019544"
+[1] "Blattodea 0.605214152700186"
+[1] "Isoptera 0.606741573033708"
+[1] "Psocodea 0.588936170212766"
+[1] "Thysanoptera 0.635342185903984"
+[1] "Hemiptera 0.5533"
+[1] "Hymenoptera 0.8972"
+[1] "Raphidioptera 0.243243243243243"
+[1] "Megaloptera 0.548543689320388"
+[1] "Neuroptera 0.559228650137741"
+[1] "Strepsiptera 0.45625"
+[1] "Coleoptera 0.6689"
+[1] "Trichoptera 0.688"
+[1] "Lepidoptera 0.5388"
+[1] "Siphonaptera 0.161290322580645"
+[1] "Mecoptera 0.276243093922652"
+[1] "Diptera 0.7989"
+[1] "Mystacocarida 0"
+[1] "Branchiura 0.428571428571429"
+[1] "Pentastomida 0.609756097560976"
+[1] "Ostracoda 0.483870967741935"
+[1] "Malacostraca 0.5232"
+[1] "Copepoda 0.561332250203087"
+[1] "Tantulocarida 0"
+[1] "Facetotecta 0.916666666666667"
+[1] "Cirripedia 0.648109243697479"
+[1] "Ascothoracida 0.166666666666667"
+[1] "Cephalocarida 0.666666666666667"
+[1] "Branchiopoda 0.724182168056446"
+[1] "Remipedia 0.363636363636364"
+[1] "Araneae 0.6277"
+[1] "Scorpiones 0.328787878787879"
+[1] "Pseudoscorpiones 0.715976331360947"
+[1] "Diplopoda 0.465859030837004"
+[1] "Chilopoda 0.45144804088586"
+[1] "Bivalvia 0.452972159518435"
+[1] "Gastropoda 0.4869"
+[1] "Cephalopoda 0.513706793802145"
+[1] "Scaphopoda 0.129032258064516"
+[1] "Polyplacophora 0.141592920353982"
+[1] "Monoplacophora 0.333333333333333"
+[1] "Solenogastres 0.391304347826087"
+[1] "Caudofoveata 0.384615384615385"
+[1] "Actinopterygii 0.4663"
+[1] "Acanthuriformes 0.14"
+[1] "Acipenseriformes 0.305084745762712"
+[1] "Albuliformes 0.535714285714286"
+[1] "Alepocephaliformes 0.0526315789473684"
+[1] "Amiiformes 0"
+[1] "Anabantiformes 0.270161290322581"
+[1] "Anguilliformes 0.465703971119134"
+[1] "Argentiniformes 0.142857142857143"
+[1] "Ateleopodiformes 0.181818181818182"
+[1] "Atheriniformes 0.368038740920097"
+[1] "Aulopiformes 0.504"
+[1] "Batrachoidiformes 0.408163265306122"
+[1] "Beloniformes 0.347280334728033"
+[1] "Beryciformes 0.539473684210526"
+[1] "Blenniiformes 0.235398230088496"
+[1] "Carangiformes 0.213114754098361"
+[1] "Centrarchiformes 0.0436507936507936"
+[1] "Chaetodontiformes 0.189473684210526"
+[1] "Characiformes 0.482662192393736"
+[1] "Cichliformes 0.546208039784501"
+[1] "Clupeiformes 0.393939393939394"
+[1] "Cypriniformes 0.329256115826261"
+[1] "Cyprinodontiformes 0.213286713286713"
+[1] "Elopiformes 0.428571428571429"
+[1] "Ephippiformes 0"
+[1] "Esociformes 0.210526315789474"
+[1] "Gadiformes 0.276657060518732"
+[1] "Galaxiiformes 0.111111111111111"
+[1] "Gobiiformes 0.332868108862526"
+[1] "Gonorynchiformes 0.407407407407407"
+[1] "Gymnotiformes 0.358208955223881"
+[1] "Hiodontiformes 0"
+[1] "Holocentriformes 0.264705882352941"
+[1] "Carangaria 0.306586826347305"
+[1] "Eupercaria 0.400665605556359"
+[1] "Ovalentaria 0.381076066790352"
+[1] "Istiophoriformes 0.25"
+[1] "Kurtiformes 0.152380952380952"
+[1] "Labriformes 0.0992217898832685"
+[1] "Lampridiformes 0.5"
+[1] "Lepidogalaxiiformes 0"
+[1] "Lepisosteiformes 0.363636363636364"
+[1] "Lobotiformes 0"
+[1] "Lophiiformes 0.310526315789474"
+[1] "Mugiliformes 0.317307692307692"
+[1] "Myctophiformes 0.398648648648649"
+[1] "Notacanthiformes 0.238095238095238"
+[1] "Ophidiiformes 0.401129943502825"
+[1] "Osmeriformes 0.450704225352113"
+[1] "Osteoglossiformes 0.472868217054264"
+[1] "Pempheriformes 0.325581395348837"
+[1] "Perciformes 0.557998483699773"
+[1] "Percopsiformes 0.25"
+[1] "Pholidichthyiformes 0"
+[1] "Pleuronectiformes 0.36541889483066"
+[1] "Polymixiiformes 0.4"
+[1] "Polypteriformes 0.25"
+[1] "Salmoniformes 0.460966542750929"
+[1] "Scombriformes 0.278625954198473"
+[1] "Siluriformes 0.389784024682893"
+[1] "Spariformes 0.112612612612613"
+[1] "Stomiatiformes 0.555900621118012"
+[1] "Stylephoriformes 0"
+[1] "Synbranchiformes 0.333333333333333"
+[1] "Syngnathiformes 0.560583941605839"
+[1] "Tetraodontiformes 0.34675615212528"
+[1] "Uranoscopiformes 0.120481927710843"
+[1] "Zeiformes 0.388888888888889"
+[1] "Amphibia 0.327834284296701"
+[1] "Birds 0.0371786700658594"
+Error in parse_esummary.XMLInternalDocument(whole_record, always_return_list) : 
+  Esummary document contains no DocSums, try 'version=2.0'?)
+In addition: Warning message:
+In check_xml_errors(x) : Empty result - nothing todo
+[1] "Archosaurs NA"
+[1] "Lepidosaurs 0.159567275185936"
+[1] "Turtles 0.127710843373494"
+[1] "Crocodilians 0.375"
+[1] "Myxiniformes 0.361702127659574"
+[1] "Petromyzontiformes 0.563106796116505"
+> 
+> proc.time()
+   user  system elapsed 
+670.066   5.541 827.267 
