@@ -18,9 +18,7 @@ RunAnalysis <- function(focal.clade, data) {
 }
 
 
-#clades <- c("Chelicerata", "Myriapoda", "Ascomycota", "Plantae", "Mammalia", "Coleoptera")
-#clades <- c("Basidiomycota", "Archaea", "Platyhelminthes", "Porifera", "Aves", "Nematoda", "Protozoa")
-clades <- c("Tracheophyta", "Chromista", "Actinobacteria", "Lepidoptera", "Mollusca", "Annelida")
+clades <- c("Hemiptera", "Odonata", "Blattodea", "Chelicerata", "Myriapoda", "Ascomycota", "Plantae", "Mammalia", "Coleoptera", "Basidiomycota", "Archaea", "Platyhelminthes", "Porifera", "Aves", "Nematoda", "Protozoa", "Tracheophyta", "Chromista", "Actinobacteria", "Lepidoptera", "Mollusca", "Annelida")
 
 
 setwd("~/Desktop")
@@ -28,4 +26,3 @@ setwd("~/Desktop")
 for(i in sequence(length(clades))) {
 	try(RunAnalysis(clades[i], data))
 }
-
