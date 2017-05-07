@@ -2,14 +2,15 @@ library(rphylotastic)
 data <- read.csv("clades.txt", header=FALSE, stringsAsFactors = FALSE)
 data <- data[,1]
 data <- data[which(nchar(data)>0)]
-fractions <- rep(NA, length(data))
-number.total <- rep(NA, length(data))
-number.dark <- rep(NA, length(data))
-number.known <- rep(NA, length(data))
-result.names <- rep(NA, length(data))
-for (i in sequence(length(data))) {
-  taxon <- strsplit(gsub(':', " ", data[i])," ")[[1]]
-  taxon <- taxon[length(taxon)]
+taxa <- unlist(strsplit(gsub(':', " ", data)," "))
+taxa <- unique(taxa[which(nchar(taxa)>2)])
+fractions <- rep(NA, length(taxa))
+number.total <- rep(NA, length(taxa))
+number.dark <- rep(NA, length(taxa))
+number.known <- rep(NA, length(taxa))
+result.names <- rep(NA, length(taxa))
+for (i in sequence(length(taxa))) {
+  taxon <- taxa[i]
   result.names[i] <- taxon
   local.results <- NULL
   try(local.results <- SeparateDarkTaxaGenbank(taxon))

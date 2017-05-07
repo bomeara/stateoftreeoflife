@@ -2,6 +2,7 @@ Alveolata:Apicomplexa
 Alveolata:Ciliophora
 Alveolata:Dinozoa
 Alveolata
+Amoebozoa
 Amoebozoa:Arcellinida
 Amoebozoa:Dictyostelia
 Amoebozoa:Eumycetozoa
@@ -10,6 +11,7 @@ Amoebozoa:Other Ameobozoa
 Amoebozoa:Protostelia
 Archaeplastida:Glaucophyta
 Archaeplastida:Rhodophyceae
+Excavata
 Excavata:Euglenozoa
 Excavata:Fornicata
 Excavata:Heterolobosea
@@ -29,6 +31,7 @@ Rhizaria:Foraminifera
 Rhizaria:Haplosporidia
 Rhizaria:Nucleohelea
 Rhizaria:Polycystinea
+Rhizaria
 Stramenopila:Actinophryidae
 Stramenopila:Bacillariophyta
 Stramenopila:Bicosoecida
@@ -46,7 +49,9 @@ Stramenopila:Pinguiophyceae
 Stramenopila:Raphidophyceae
 Stramenopila:Synurophyceae
 Stramenopila:Xanthophyceae
+Stramenopila
 Porifera
+Cnidaria
 Cnidaria: Anthozoa
 Cnidaria: Medusozoa
 Cnidaria: Myxozoa
