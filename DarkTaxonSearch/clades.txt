@@ -21,10 +21,10 @@ Excavata:Parabasalia
 Excavata:Preaxostyla
 Opisthokonta:Choanomonada
 Opisthokonta:Mesomycetozoa
-Other:Apusomonadida
-Other:Centroheliozoa
-Other:Cryptophyceae
-Other:Haptophyta
+Apusomonadida
+Centroheliozoa
+Cryptophyceae
+Haptophyta
 Rhizaria:Acantharia
 Rhizaria:Cercozoa
 Rhizaria:Foraminifera
@@ -55,16 +55,18 @@ Cnidaria
 Cnidaria: Anthozoa
 Cnidaria: Medusozoa
 Cnidaria: Myxozoa
-Green plants: Green Algae Chlorophytes
-Green plants: Green Algae Streptophytes
-Green plants: Bryophytes
-Green plants: Lycopodiopsida
-Green plants: Polypodiopsida
-Green plants: Gymnosperms
-Green plants: Amborellales
-Green plants: Nympheales
-Green plants: Austrobaileyales
-Green plants: Monocots
+Chlorophytes
+Streptophytes
+Bryophytes
+Lycopodiopsida
+Polypodiopsida
+Acrogymnospermae
+Amborellales
+Nympheales
+Austrobaileyales
+Liliopsida
+Pinidae
+Magnoliophyta
 Hexapoda: Collembola
 Hexapoda: Protura
 Hexapoda: Diplura
@@ -97,7 +99,6 @@ Hexapoda: Lepidoptera
 Hexapoda: Siphonaptera
 Hexapoda: Mecoptera
 Hexapoda: Diptera
-
 Pancrustacea: Mystacocarida
 Pancrustacea: Branchiura
 Pancrustacea: Pentastomida
@@ -111,14 +112,11 @@ Pancrustacea: Ascothoracida
 Pancrustacea: Cephalocarida
 Pancrustacea: Branchiopoda
 Pancrustacea: Remipedia
-
 Chelicerata: Araneae
 Chelicerata: Scorpiones
 Chelicerata: Pseudoscorpiones
-
 Myriapoda: Diplopoda
 Myriapoda: Chilopoda
-
 Mollusca: Bivalvia
 Mollusca: Gastropoda
 Mollusca: Cephalopoda
@@ -127,924 +125,82 @@ Mollusca: Polyplacophora
 Mollusca: Monoplacophora
 Mollusca: Solenogastres
 Mollusca: Caudofoveata
-VERTEBRATES Actinopterygii
-VERTEBRATES Actinopterygii: Acanthuriformes
-VERTEBRATES Actinopterygii: Acipenseriformes
-VERTEBRATES Actinopterygii: Albuliformes
-VERTEBRATES Actinopterygii: Alepocephaliformes
-VERTEBRATES Actinopterygii: Amiiformes
-VERTEBRATES Actinopterygii: Anabantiformes
-VERTEBRATES Actinopterygii: Anguilliformes
-VERTEBRATES Actinopterygii: Argentiniformes
-VERTEBRATES Actinopterygii: Ateleopodiformes
-VERTEBRATES Actinopterygii: Atheriniformes
-VERTEBRATES Actinopterygii: Aulopiformes
-VERTEBRATES Actinopterygii: Batrachoidiformes
-VERTEBRATES Actinopterygii: Beloniformes
-VERTEBRATES Actinopterygii: Beryciformes
-VERTEBRATES Actinopterygii: Blenniiformes
-VERTEBRATES Actinopterygii: Carangiformes
-VERTEBRATES Actinopterygii: Centrarchiformes
-VERTEBRATES Actinopterygii: Chaetodontiformes
-VERTEBRATES Actinopterygii: Characiformes
-VERTEBRATES Actinopterygii: Cichliformes
-VERTEBRATES Actinopterygii: Clupeiformes
-VERTEBRATES Actinopterygii: Cypriniformes
-VERTEBRATES Actinopterygii: Cyprinodontiformes
-VERTEBRATES Actinopterygii: Elopiformes
-VERTEBRATES Actinopterygii: Ephippiformes
-VERTEBRATES Actinopterygii: Esociformes
-VERTEBRATES Actinopterygii: Gadiformes
-VERTEBRATES Actinopterygii: Galaxiiformes
-VERTEBRATES Actinopterygii: Gobiiformes
-VERTEBRATES Actinopterygii: Gonorynchiformes
-VERTEBRATES Actinopterygii: Gymnotiformes
-VERTEBRATES Actinopterygii: Hiodontiformes
-VERTEBRATES Actinopterygii: Holocentriformes
-VERTEBRATES Actinopterygii: Incertae sedis in Carangaria
-VERTEBRATES Actinopterygii: Incertae sedis in Eupercaria
-VERTEBRATES Actinopterygii: Incertae sedis in Ovalentaria
-VERTEBRATES Actinopterygii: Istiophoriformes
-VERTEBRATES Actinopterygii: Kurtiformes
-VERTEBRATES Actinopterygii: Labriformes
-VERTEBRATES Actinopterygii: Lampridiformes
-VERTEBRATES Actinopterygii: Lepidogalaxiiformes
-VERTEBRATES Actinopterygii: Lepisosteiformes
-VERTEBRATES Actinopterygii: Lobotiformes
-VERTEBRATES Actinopterygii: Lophiiformes
-VERTEBRATES Actinopterygii: Mugiliformes
-VERTEBRATES Actinopterygii: Myctophiformes
-VERTEBRATES Actinopterygii: Notacanthiformes
-VERTEBRATES Actinopterygii: Ophidiiformes
-VERTEBRATES Actinopterygii: Osmeriformes
-VERTEBRATES Actinopterygii: Osteoglossiformes
-VERTEBRATES Actinopterygii: Pempheriformes
-VERTEBRATES Actinopterygii: Perciformes
-VERTEBRATES Actinopterygii: Percopsiformes
-VERTEBRATES Actinopterygii: Pholidichthyiformes
-VERTEBRATES Actinopterygii: Pleuronectiformes
-VERTEBRATES Actinopterygii: Polymixiiformes
-VERTEBRATES Actinopterygii: Polypteriformes
-VERTEBRATES Actinopterygii: Salmoniformes
-VERTEBRATES Actinopterygii: Scombriformes
-VERTEBRATES Actinopterygii: Siluriformes
-VERTEBRATES Actinopterygii: Spariformes
-VERTEBRATES Actinopterygii: Stomiatiformes
-VERTEBRATES Actinopterygii: Stylephoriformes
-VERTEBRATES Actinopterygii: Synbranchiformes
-VERTEBRATES Actinopterygii: Syngnathiformes
-VERTEBRATES Actinopterygii: Tetraodontiformes
-VERTEBRATES Actinopterygii: Uranoscopiformes
-VERTEBRATES Actinopterygii: Zeiformes
-
-VERTEBRATES Amphibia
-VERTEBRATES Birds
-VERTERATES Archosaurs
-VERTEBRATES Lepidosaurs
-VERTEBRATES Turtles
-VERTEBRATES Crocodilians
-
-CYCLOSTOMATA Myxiniformes
-CYCLOSTOMATA Petromyzontiformes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Actinopterygii
+Actinopterygii: Acanthuriformes
+Actinopterygii: Acipenseriformes
+Actinopterygii: Albuliformes
+Actinopterygii: Alepocephaliformes
+Actinopterygii: Amiiformes
+Actinopterygii: Anabantiformes
+Actinopterygii: Anguilliformes
+Actinopterygii: Argentiniformes
+Actinopterygii: Ateleopodiformes
+Actinopterygii: Atheriniformes
+Actinopterygii: Aulopiformes
+Actinopterygii: Batrachoidiformes
+Actinopterygii: Beloniformes
+Actinopterygii: Beryciformes
+Actinopterygii: Blenniiformes
+Actinopterygii: Carangiformes
+Actinopterygii: Centrarchiformes
+Actinopterygii: Chaetodontiformes
+Actinopterygii: Characiformes
+Actinopterygii: Cichliformes
+Actinopterygii: Clupeiformes
+Actinopterygii: Cypriniformes
+Actinopterygii: Cyprinodontiformes
+Actinopterygii: Elopiformes
+Actinopterygii: Ephippiformes
+Actinopterygii: Esociformes
+Actinopterygii: Gadiformes
+Actinopterygii: Galaxiiformes
+Actinopterygii: Gobiiformes
+Actinopterygii: Gonorynchiformes
+Actinopterygii: Gymnotiformes
+Actinopterygii: Hiodontiformes
+Actinopterygii: Holocentriformes
+Actinopterygii: Carangaria
+Actinopterygii: Eupercaria
+Actinopterygii: Ovalentaria
+Actinopterygii: Istiophoriformes
+Actinopterygii: Kurtiformes
+Actinopterygii: Labriformes
+Actinopterygii: Lampridiformes
+Actinopterygii: Lepidogalaxiiformes
+Actinopterygii: Lepisosteiformes
+Actinopterygii: Lobotiformes
+Actinopterygii: Lophiiformes
+Actinopterygii: Mugiliformes
+Actinopterygii: Myctophiformes
+Actinopterygii: Notacanthiformes
+Actinopterygii: Ophidiiformes
+Actinopterygii: Osmeriformes
+Actinopterygii: Osteoglossiformes
+Actinopterygii: Pempheriformes
+Actinopterygii: Perciformes
+Actinopterygii: Percopsiformes
+Actinopterygii: Pholidichthyiformes
+Actinopterygii: Pleuronectiformes
+Actinopterygii: Polymixiiformes
+Actinopterygii: Polypteriformes
+Actinopterygii: Salmoniformes
+Actinopterygii: Scombriformes
+Actinopterygii: Siluriformes
+Actinopterygii: Spariformes
+Actinopterygii: Stomiatiformes
+Actinopterygii: Stylephoriformes
+Actinopterygii: Synbranchiformes
+Actinopterygii: Syngnathiformes
+Actinopterygii: Tetraodontiformes
+Actinopterygii: Uranoscopiformes
+Actinopterygii: Zeiformes
+Sarcopterygii
+Amphibia
+Aves
+Archosaurs
+Lepidosaurs
+Testudines
+Crocodilia
+CYCLOSTOMATA
+Myxiniformes
+Petromyzontiformes
