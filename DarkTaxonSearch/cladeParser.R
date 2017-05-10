@@ -13,8 +13,9 @@ for (i in sequence(length(taxa))) {
   taxon <- taxa[i]
   result.names[i] <- taxon
   local.results <- NULL
-  try(local.results <- SeparateDarkTaxaGenbank(taxon))
+  try(local.results <- SeparateDarkTaxaGenbank(taxon, sleep=3))
   if(!is.null(local.results)) {
+     save(local.results, file=paste0("names_",taxon,".gzip"), compress=TRUE)
      fractions[i] <- local.results$fraction.dark
      number.total[i] <- length(local.results$dark) + length(local.results$known)
      number.dark[i] <- length(local.results$dark)
