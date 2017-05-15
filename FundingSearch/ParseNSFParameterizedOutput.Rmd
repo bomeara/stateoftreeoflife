@@ -5,11 +5,11 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
-This was created for NSF grants from 1980 to 2017. 
+This was created for NSF grants from 1980 to 2017.
 
 I first filtered grants for those that matched "systematics", "phylogen", "taxonom", "tree of life" in their title or abstract.
 
-Then, for each clade, I used itis to find the list of families for that clade. 
+Then, for each clade, I used itis to find the list of families for that clade.
 
 All the filtered grants were filtered again for those matching the original clade name and/or any of the families in that clade.
 
@@ -32,8 +32,8 @@ library(wordcloud)
 
 
 ```{r load data, echo=FALSE, warning=FALSE}
-files <- system("ls -1 ~/Desktop/GrantInfo_*.csv", intern=TRUE)
-clade.names <- gsub("/Users/bomeara/Desktop/", "", gsub("GrantInfo_","", gsub(".csv", "", files)))
+files <- system("ls -1 GrantInfo_*.csv", intern=TRUE)
+clade.names <- gsub("GrantInfo_","", gsub(".csv", "", files))
 ```
 
 
@@ -43,8 +43,8 @@ for (clade.index in sequence(length(clade.names))) {
   clade.info <- read.csv(files[clade.index], stringsAsFactors=FALSE)
   #results.dark <- rphylotastic::SeparateDarkTaxaGenbank(clade.names[clade.index])
   #local.df <- data.frame(clade=clade.names[clade.index], number.grants=nrow(clade.info), total.grants=sum(clade.info$amount), median.grant=median(clade.info$amount), mean.grant=mean(clade.info$amount), ntips.genbank = length(results.dark$dark)+length(results.dark$known), fraction.dark = results.dark$fraction.dark, PIs=paste(clade.info$PI, collapse=", "))
-  
-    local.df <- data.frame(clade=clade.names[clade.index], number.grants=nrow(clade.info), total.grants=sum(clade.info$amount), median.grant=median(clade.info$amount), mean.grant=mean(clade.info$amount), PIs=paste(clade.info$PI, collapse=", "))
+
+    local.df <- data.frame(clade=clade.names[clade.index], number.grants=nrow(clade.info), total.grants=sum(clade.info$amount), median.grant=median(clade.info$amount), mean.grant=mean(clade.info$amount), PIs=paste(clade.info$PI, collapse=", "), investigators=paste(clade.info$investigators, collapse="\t"))
   final.df <- rbind(final.df, local.df)
 }
 pander(final.df[,-ncol(final.df)])
@@ -61,7 +61,7 @@ barplot(plotting.df$mean.grant, las=2, main="Mean grant")
 
 
 
-```{r build tree, echo=FALSE, warning=FALSE, message=FALSE} 
+```{r build tree, echo=FALSE, warning=FALSE, message=FALSE}
 phy <- rphylotastic::GetOToLTree(clade.names)
 for (i in sequence(ape::Ntip(phy))) {
   phy$tip.label[i] <- strsplit(phy$tip.label[i], "_")[[1]][1]
@@ -79,4 +79,3 @@ for (i in sequence(nrow(final.df))) {
   wordcloud((strsplit(as.character(final.df$PIs[i]), ", ")[[1]]), main=final.df$clade[i])
 }
 ```
-
