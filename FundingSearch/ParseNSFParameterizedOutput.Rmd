@@ -27,7 +27,7 @@ library(rphylotastic)
 library(geiger)
 library(ape)
 library(phytools)
-library(wordcloud)
+library(wordcloud2)
 ```
 
 
