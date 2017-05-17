@@ -62,19 +62,29 @@ for (clade.index in sequence(length(clade.names))) {
     #all.words <- tm_map(all.words, stemDocument)
     all.words.df <- data.frame(table(strsplit(as.character(all.words[[1]]), " ")[[1]]))
     names(all.words.df) <- c("word", "freq")
+    if(nrow(all.words.df)>1000) {
+     all.words.df <- all.words.df[order(all.words.df$freq, decreasing=TRUE),]
+     all.words.df <- all.words.df[1:1000,]
+        
+    }
+    
+    money.by.person <- money.by.person[order(money.by.person$freq, decreasing=TRUE),]
+    all.people.df <- all.people.df[order(all.people.df$freq, decreasing=TRUE),]
+    
+    
     my_graph =     wordcloud2(all.words.df)
     saveWidget(my_graph,"tmp.html",selfcontained = F)
-    webshot("tmp.html",paste0("Figure_",clade.names[clade.index],"_Words.pdf"), delay =5, vwidth = 4800, vheight=4800)
+    webshot("tmp.html",paste0("Figure_",clade.names[clade.index],"_Words.pdf"), delay =5, vwidth = 480, vheight=480)
     
     my_graph =     wordcloud2(money.by.person)
     saveWidget(my_graph,"tmp.html",selfcontained = F)
-    webshot("tmp.html",paste0("Figure_",clade.names[clade.index],"_PeopleByMoney.pdf"), delay =5, vwidth = 4800, vheight=4800)
+    webshot("tmp.html",paste0("Figure_",clade.names[clade.index],"_PeopleByMoney.pdf"), delay =5, vwidth = 480, vheight=480)
     
 
     
     my_graph =     wordcloud2(all.people.df)
     saveWidget(my_graph,"tmp.html",selfcontained = F)
-    webshot("tmp.html",paste0("Figure_",clade.names[clade.index],"_PeopleByNumberOfGrants.pdf"), delay =5, vwidth = 4800, vheight=4800)
+    webshot("tmp.html",paste0("Figure_",clade.names[clade.index],"_PeopleByNumberOfGrants.pdf"), delay =5, vwidth = 480, vheight=480)
     
   
 }
